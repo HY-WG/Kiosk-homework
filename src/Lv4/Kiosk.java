@@ -17,7 +17,7 @@ public class Kiosk {
             Scanner scanner = new Scanner(System.in);
             while (true) {
                 System.out.println("\n===== 메뉴 =====");
-                for (int i = 0; i < menuList.size(); i++) { // menuList 사이즈 만큼 i 증가시켜 반복해라 아마도
+                for (int i = 0; i < menuList.size(); i++) { // menuList 사이즈 만큼 i 증가시켜 반복
                     System.out.println((i + 1) + ". " + menuList.get(i).getName()); // 번호를 순차적으로 증가시켜가며 class 내 name 과함께 출력
                 }
                 System.out.println("0. 종료"); // list에 없는 종료 문구 추가

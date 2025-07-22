@@ -3,9 +3,9 @@ package Lv4;
 public class MenuItem {
 
     // 속성
-    String name;
-    double price;
-    String description;
+    private String name;
+    private double price;
+    private String description;
 
     //생성
     MenuItem(String name, double price, String description) {
@@ -22,7 +22,7 @@ public class MenuItem {
         System.out.println("메뉴 설명: " + this.description);
 
     }
-
+// getter
     public String getName() {
         return name;
     }

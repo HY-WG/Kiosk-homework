@@ -1,14 +1,16 @@
 package Lv4;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
 
     public enum MenuCategory {
-        BURGER,
-        DRINK,
-        DESSERT
+        BURGER,  //0
+        DRINK, //1
+        DESSERT //2
     }
 
     private final List<MenuItem> burgers = new ArrayList<>();
