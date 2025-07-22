@@ -1,4 +1,4 @@
-package Lv4;
+package challengeLv1;
 
 import java.util.List;
 import java.util.Scanner;
@@ -23,7 +23,7 @@ public class Main {
                 List<MenuItem> burgerList = menu.getMenu(Menu.MenuCategory.BURGER);
                 Kiosk kiosk = new Kiosk(burgerList);
                 kiosk.start();
-                // 키오스크 실행  // 키오스크 실행
+
 
             case "2":
                 menu.loadData();  // 메뉴 리스트 전달

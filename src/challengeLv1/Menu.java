@@ -1,38 +1,26 @@
-package Lv4;
-
-import org.w3c.dom.ls.LSOutput;
+package challengeLv1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Menu {
 
     public enum MenuCategory {
-        BURGER,  //0
-        DRINK, //1
-        DESSERT //2
+        BURGER, DRINK, DESSERT
     }
 
     private final List<MenuItem> burgers = new ArrayList<>();
     private final List<MenuItem> drinks = new ArrayList<>();
-    private final List<MenuItem> deserts = new ArrayList<>();
+    private final List<MenuItem> desserts = new ArrayList<>();
 
     public List<MenuItem> getMenu(MenuCategory category) {
-        switch (category) {
-            case BURGER -> {
-                return burgers;
-            }
-            case DRINK -> {
-                return drinks;
-            }
-            case DESSERT -> {
-                return deserts;
-            }
-            default -> {
-                throw new RuntimeException("카테고리에 맞는 메뉴를 찾을 수 없습니다.");
-            }
-        }
+        return switch (category) {
+            case BURGER -> burgers;
+            case DRINK -> drinks;
+            case DESSERT -> desserts;
+
+
+        };
     }
 
     public void loadData() {
@@ -51,13 +39,8 @@ public class Menu {
     }
 
     public void addMenu(MenuCategory category, String name, double price, String description) {
-        try {
-            getMenu(category).add(new MenuItem(name, price, description));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        getMenu(category).add(new MenuItem(name, price, description));
 
 
-
-        }
     }
 }
