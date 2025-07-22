@@ -8,7 +8,7 @@ public class MenuItem {
     String description;
 
     //생성
-    MenuItem(String name,  double price, String description) {
+    MenuItem(String name, double price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -21,5 +21,9 @@ public class MenuItem {
         System.out.println("가격: " + this.price);
         System.out.println("메뉴 설명: " + this.description);
 
+    }
+
+    public String getName() {
+        return name;
     }
 }

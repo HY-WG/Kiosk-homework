@@ -1,26 +1,43 @@
 package Lv4;
 
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Kiosk {
-//설명: 키오스크 프로그램의 메뉴를 관리하고 사용자 입력을 처리하는 클래스입니다.
-    //- [ ]  `MenuItem`을 관리하는 리스트가 필드로 존재합니다.
-    //- [ ]  `main` 함수에서 관리하던 입력과 반복문 로직은 이제 `start` 함수를 만들어 관리합니다.
-    //- [ ]  `List<MenuItem> menuItems` 는 `Kiosk` 클래스 생성자를 통해 값을 할당합니다.
-    //    - [ ]  `Kiosk` 객체를 생성하고 사용하는 `main` 함수에서 객체를 생성할 때 값을 넘겨줍니
-// 스캐너 선언
-    // 반복문 시작
 
-    // List와 Menu 클래스 활용하여 상위 카테고리 메뉴 출력
+        List<MenuItem> menuList = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
 
-    // 숫자 입력 받기
+        Kiosk(List<MenuItem> menuList) {
+            this.menuList.addAll(menuList);
+        }
 
-    // 입력 받은 숫자가 올바르다면 인덱스로 활용하여 List에 접근하기
-    // List<Menu>에 인덱스로 접근하면 Menu만 추출할 수 있겠죠?
+        public void start() {
+            Scanner scanner = new Scanner(System.in);
+            while (true) {
+                System.out.println("\n===== 메뉴 =====");
+                for (int i = 0; i < menuList.size(); i++) { // menuList 사이즈 만큼 i 증가시켜 반복해라 아마도
+                    System.out.println((i + 1) + ". " + menuList.get(i).getName()); // 번호를 순차적으로 증가시켜가며 class 내 name 과함께 출력
+                }
+                System.out.println("0. 종료"); // list에 없는 종료 문구 추가
 
-    // Menu가 가진 List<MenuItem>을 반복문을 활용하여 햄버거 메뉴 출력
+                System.out.print("메뉴 번호를 선택하세요: ");
+                String input = scanner.nextLine();
+                int num = Integer.parseInt(input);
 
-    // 숫자 입력 받기
-    // 입력 받은 숫자가 올바르다면 인덱스로 활용해서 Menu가 가지고 있는 List<MenuItem>에 접근하기
-    // menu.getMenuItems().get(i); 같은 형식으로 하나씩 들어가서 얻어와야 합니다.
-}
+
+                if (num == 0) {
+                    System.out.println("프로그램을 종료합니다."); // 0이면 프로그램 종료
+                    break;
+                } else if (num >= 1 && num <= menuList.size()) { //입력한 숫자가 1보다 크거나 메뉴 사이즈보다 작으면 메뉴 정보 출력
+                    System.out.println("\n선택한 메뉴 정보:");
+                    menuList.get(num - 1).printInfo();
+                } else {
+                    System.out.println("올바른 메뉴 번호를 입력해주세요.");
+                }
+            }
+        }
+
+    }
+

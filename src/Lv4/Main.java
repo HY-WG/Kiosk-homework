@@ -1,15 +1,14 @@
 package Lv4;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        Menu menu = new Menu();       // 메뉴 객체 생성
+        menu.loadData();              // 메뉴 데이터 로딩
+        List<MenuItem> burgerList = menu.getMenu(Menu.MenuCategory.BURGER);  // 원하는 카테고리 선택
 
-// Menu 객체 생성을 통해 이름 설정
-        // Menu 클래스 내 있는 List<MenuItem> 에 MenuItem 객체 생성하면서 삽입
-
-        // Kiosk 객체 생성
-        // Kiosk 내 시작하는 함수 호출
-
-        Kiosk setup = new Kiosk();
-
+        Kiosk kiosk = new Kiosk(burgerList);  // 메뉴 리스트 전달
+        kiosk.start();  // 키오스크 실행
     }
 }
