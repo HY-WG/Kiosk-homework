@@ -14,6 +14,7 @@ public class Menu {
     private final List<MenuItem> desserts = new ArrayList<>();
 
     public List<MenuItem> getMenu(MenuCategory category) {
+        // 각 카테고리별 메뉴를 담을 리스트
         return switch (category) {
             case BURGER -> burgers;
             case DRINK -> drinks;
@@ -22,7 +23,7 @@ public class Menu {
 
         };
     }
-
+// 카테고리에 따라 해당 리스트를 반환
     public void loadData() {
         addMenu(MenuCategory.BURGER, "ShackBurger", 6.9, "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
         addMenu(MenuCategory.BURGER, "SmokeShack", 8.9, "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
