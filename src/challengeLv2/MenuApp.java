@@ -14,7 +14,7 @@ public class MenuApp {
         this.cart = cart;
         this.selected = selected;
         this.scanner = scanner;
-        // kiosk 에서 만든 Cart 를 받아오기
+
     }
 
     public void start() {
